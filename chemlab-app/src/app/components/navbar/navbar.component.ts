@@ -9,9 +9,9 @@ import { ILink } from './navbar-data';
 export class NavbarComponent implements OnInit {
 
   links: ILink[] = [
-    { name: 'Home', path: '', icon: "home" },
-    { name: 'Elements', path: 'elements', icon: "bubble_chart" },
-    { name: 'About us', path: 'about-us', icon: "group" }
+    { name: 'Home', path: '' },
+    { name: 'Elements', path: 'elements' },
+    { name: 'About us', path: 'about-us' }
   ];
 
   constructor() { }

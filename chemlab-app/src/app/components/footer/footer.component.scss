@@ -1,0 +1,15 @@
+@import '../../../colors.scss';
+
+.footer-container {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 60px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-color: $gray900;
+  text-align: center;
+  color: #FFF;
+}
