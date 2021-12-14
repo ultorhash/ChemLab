@@ -1,0 +1,12 @@
+<mat-toolbar class="navbar">
+  <a *ngFor="let link of links"
+    class="navbar_link"
+    mat-button
+    [routerLink]="link.path"
+  >
+    {{ link.name }}
+    <mat-icon class="navbar_link_icon">
+      {{ link.icon }}
+    </mat-icon>
+  </a>
+</mat-toolbar>

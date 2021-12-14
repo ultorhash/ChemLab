@@ -1,0 +1,14 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+  border-bottom: 2px solid #ddd;
+  background-color: #fff;
+}
+
+.navbar_link {
+  margin: 0 1rem;
+  border: 1px solid #ddd;
+}
