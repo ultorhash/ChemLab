@@ -16,17 +16,22 @@
     >
       <ng-container matColumnDef="name">
         <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-      </ng-container>
-
-      <ng-container matColumnDef="weight">
-        <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="symbol">
         <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{ element.symbol }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="atomic number">
+        <mat-header-cell *matHeaderCellDef> Atomic number </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.atomicNumber }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="atomic mass">
+        <mat-header-cell *matHeaderCellDef> Atomic mass </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.atomicMass }} </mat-cell>
       </ng-container>
 
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

@@ -10,6 +10,7 @@ namespace ChemLab.Serving.AppService.Data.Models
     {
         [Key]
         public int Id { get; set; }
+        public string Name { get; set; }
         public string Symbol { get; set; }
         public short AtomicNumber { get; set; }
         public decimal AtomicMass { get; set; }
