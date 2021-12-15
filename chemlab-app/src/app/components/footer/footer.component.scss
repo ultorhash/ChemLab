@@ -5,11 +5,15 @@
   right: 0;
   bottom: 0;
   left: 0;
-  height: 60px;
+  height: 40px;
   display: grid;
   justify-content: center;
   align-content: center;
   background-color: $gray900;
   text-align: center;
-  color: #FFF;
+  color: $white;
+
+  span {
+    font-size: 0.7rem;
+  }
 }

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 export interface Element {
   name: string;
@@ -37,12 +38,26 @@ const ELEMENT_DATA: Element[] = [
 })
 export class ElementsComponent implements OnInit {
 
+  @ViewChild(MatPaginator) paginator: MatPaginator = {} as MatPaginator;
+
   displayedColumns = ['name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  dataSource = new MatTableDataSource<Element>(ELEMENT_DATA);
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+  }
+
+  applyFilter(event: Event) {
+    const { target } = event;
+    const filterValue: string = (target as HTMLInputElement).value;
+    filterValue.trim();
+    filterValue.toLowerCase();
+    this.dataSource.filter = filterValue;
   }
 
 }
