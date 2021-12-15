@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { ElementsService } from './elements.service';
+import { map } from 'rxjs/operators';
 
 export interface Element {
   name: string;
@@ -43,9 +45,13 @@ export class ElementsComponent implements OnInit {
   displayedColumns = ['name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<Element>(ELEMENT_DATA);
 
-  constructor() { }
+  constructor(private elementsService: ElementsService) { }
 
   ngOnInit(): void {
+    this.elementsService.getElements().pipe(
+      map(res => console.log(res))
+    )
+    .subscribe();
   }
 
   ngAfterViewInit(): void {
@@ -59,5 +65,4 @@ export class ElementsComponent implements OnInit {
     filterValue.toLowerCase();
     this.dataSource.filter = filterValue;
   }
-
 }

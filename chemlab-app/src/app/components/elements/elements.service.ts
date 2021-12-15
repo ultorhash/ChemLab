@@ -12,6 +12,6 @@ export class ElementsService {
   constructor(private http: HttpClient) { }
 
   getElements(): Observable<IElement> {
-    return this.http.get<IElement>(`${environment.apiURL}/api/login/auth`);
+    return this.http.get<IElement>(`${environment.apiURL}/api/elements`);
   }
 }
