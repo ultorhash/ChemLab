@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ILink } from './navbar-data';
+import { INavLink } from '../../interfaces/navbar.interface';
 
 @Component({
   selector: 'app-navbar',
@@ -8,10 +8,10 @@ import { ILink } from './navbar-data';
 })
 export class NavbarComponent implements OnInit {
 
-  links: ILink[] = [
-    { name: 'Home', path: '' },
-    { name: 'Elements', path: 'elements' },
-    { name: 'About us', path: 'about-us' }
+  links: INavLink[] = [
+    { name: 'Home', iconName: 'home', path: '' },
+    { name: 'Elements', iconName: 'list_alt', path: 'elements' },
+    { name: 'About us', iconName: 'people', path: 'about-us' }
   ];
 
   constructor() { }
