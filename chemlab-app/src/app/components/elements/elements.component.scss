@@ -1,8 +1,21 @@
 @import '../../../colors.scss';
 
-.elements-container {
-  height: calc(100% - 164px);
-  margin: 20px;
+.elements {
+  margin: 10px 20px;
+  width: auto;
+  height: auto;
+}
+
+.elements-table-container {
+  height: calc(100vh - 250px);
+}
+
+.elements-filter {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 10px;
 }
 
 .elements-table {
@@ -21,4 +34,8 @@
 
 .elements-table::-webkit-scrollbar-thumb {
   background-color: $gray500;
+}
+
+.elements-paginator {
+  margin-top: 20px;
 }
