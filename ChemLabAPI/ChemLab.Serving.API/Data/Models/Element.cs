@@ -18,7 +18,7 @@ namespace ChemLab.Serving.AppService.Data.Models
         public string Density { get; set; }
         public decimal MeltingTemp { get; set; }
         public decimal BoilingTemp { get; set; }
-        public short DiscoverYear { get; set; }
+        public short DiscoveryYear { get; set; }
         public string Discoverer { get; set; }
     }
 }
