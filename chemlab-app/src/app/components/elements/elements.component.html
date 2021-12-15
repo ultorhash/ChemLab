@@ -1,11 +1,23 @@
-<div class="elements">
+<div class="elements-container">
   <div class="elements-filter">
     <mat-form-field>
       <input
         matInput
+        type="text"
+        placeholder="{{ search.placeholder }}"
+        [(ngModel)]="search.value"
         (keyup)="applyFilter($event)"
-        placeholder="Start typing ..."
       >
+      <button
+        *ngIf="search.value"
+        mat-button
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="search.value=''"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
     </mat-form-field>
   </div>
   <div class="elements-table-container mat-elevation-z8">

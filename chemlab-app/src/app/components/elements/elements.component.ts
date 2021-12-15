@@ -5,6 +5,7 @@ import { ElementsService } from './elements.service';
 import { IElement } from 'src/app/interfaces/element.interface';
 import { map } from 'rxjs/operators';
 import { ElementColumns } from 'src/app/enums/element-column.enum';
+import { ISearchInput } from '../../interfaces/search.interface';
 
 @Component({
   selector: 'app-elements',
@@ -15,13 +16,17 @@ export class ElementsComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator = {} as MatPaginator;
 
+  dataSource = new MatTableDataSource<IElement>();
   displayedColumns = [
     ElementColumns.Name,
     ElementColumns.Symbol,
     ElementColumns.AtomicNumber,
     ElementColumns.AtomicMass
   ];
-  dataSource = new MatTableDataSource<IElement>();
+  search: ISearchInput = {
+    placeholder: 'Search element ...',
+    value: ''
+  }
 
   constructor(private elementsService: ElementsService) { }
 
