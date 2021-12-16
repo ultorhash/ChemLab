@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input'
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ColumnFormatPipe } from './pipes/column-name.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     ElementsComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ColumnFormatPipe
   ],
   imports: [
     BrowserModule,

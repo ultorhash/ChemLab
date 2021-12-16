@@ -3,9 +3,10 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { ElementsService } from './elements.service';
 import { IElement } from 'src/app/interfaces/element.interface';
-import { map } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { ElementColumns } from 'src/app/enums/element-column.enum';
 import { ISearchInput } from '../../interfaces/search.interface';
+import { Icons } from '../../enums/icon.enum';
 
 @Component({
   selector: 'app-elements',
@@ -21,12 +22,17 @@ export class ElementsComponent implements OnInit {
     ElementColumns.Name,
     ElementColumns.Symbol,
     ElementColumns.AtomicNumber,
-    ElementColumns.AtomicMass
+    ElementColumns.AtomicMass,
+    ElementColumns.State,
+    ElementColumns.ChemicalNature,
+    ElementColumns.Options
   ];
   search: ISearchInput = {
     placeholder: 'Search element ...',
     value: ''
-  }
+  };
+  
+  settingsIcon = Icons.Menu;
 
   constructor(private elementsService: ElementsService) { }
 
@@ -40,7 +46,7 @@ export class ElementsComponent implements OnInit {
 
   loadElements(): void {
     this.elementsService.getElements().pipe(
-      map(res => {
+      tap(res => {
         this.dataSource.data = res;
       })
     )
