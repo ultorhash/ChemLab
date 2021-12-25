@@ -59,9 +59,7 @@
       <ng-container matColumnDef="options">
         <mat-header-cell *matHeaderCellDef> {{ displayedColumns[6] | columnFormat }} </mat-header-cell>
         <mat-cell *matCellDef="let element">
-          <button
-            mat-raised-button
-          >
+          <button mat-icon-button>
             <mat-icon>{{ settingsIcon }}</mat-icon>
           </button>
         </mat-cell>

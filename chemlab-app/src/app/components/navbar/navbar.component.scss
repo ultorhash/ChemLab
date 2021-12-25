@@ -6,19 +6,18 @@
   justify-content: flex-end;
   align-items: center;
   flex-wrap: nowrap;
-  border-bottom: 2px solid $gray100;
-  background-color: $white;
+  border-bottom: 2px solid $gray300;
+  background-color: $green200;
 }
 
 .navbar-link {
   margin: 0 1rem;
-  border: 1px solid $gray200;
   background-color: $white;
   color: $black;
   transition: 0.2s;
 
   &:hover {
-    background-color: $blue700;
+    background-color: $green600;
     color: $white;
   }
 }
