@@ -7,22 +7,23 @@
   align-items: center;
   flex-wrap: nowrap;
   border-bottom: 2px solid $gray300;
-  background-color: $blue300;
+  background-color: $gray100;
 }
 
 .navbar-link {
-  margin: 0 1rem;
-  background-color: $white;
+  padding: 0 1rem;
   color: $black;
-  transition: 0.2s;
-
-  &:hover {
-    background-color: $blue600;
-    color: $white;
-  }
+  text-decoration: none;
+  font-size: 1rem;
 }
 
-::ng-deep .mat-icon {
-  width: 24px !important;
-  font-size: 22px !important;
+::ng-deep.mat-focus-indicator,
+  .navbar-settings,
+  .mat-button,
+  .mat-button-base {
+  line-height: 0;
+  padding: 0;
+  width: 30px;
+  min-width: 0;
+  height: auto;
 }

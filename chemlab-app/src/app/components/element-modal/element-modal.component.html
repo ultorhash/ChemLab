@@ -7,7 +7,7 @@
       <mat-icon>
         {{ item.description.icon }}
       </mat-icon>
-      <span>{{ item.description.text | columnFormat }}</span>
+      {{ item.description.text | columnFormat }}
     </div>
     <div class="column">
       <b>{{ item.property }}</b>

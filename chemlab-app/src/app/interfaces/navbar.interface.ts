@@ -1,5 +1,9 @@
 export interface INavLink {
   name: string;
-  iconName: string;
   path: string;
+}
+
+export interface ISettings {
+  name: string;
+  icon: string;
 }

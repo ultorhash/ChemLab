@@ -1,13 +1,21 @@
 <mat-toolbar class="navbar">
   <a
-    *ngFor="let link of links"
-    mat-button
+    *ngFor="let link of menuLinks"
     class="navbar-link"
     [routerLink]="link.path"
   >
     {{ link.name }}
-    <mat-icon inline="true">
-      {{ link.iconName }}
-    </mat-icon>
   </a>
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>person</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button
+      *ngFor="let option of menuSettings"
+      mat-menu-item
+    >
+      {{ option.name }}
+      <mat-icon>{{ option.icon }}</mat-icon>
+    </button>
+  </mat-menu>
 </mat-toolbar>

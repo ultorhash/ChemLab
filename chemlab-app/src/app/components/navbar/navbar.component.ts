@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { INavLink } from '../../interfaces/navbar.interface';
-import { Icons } from '../../enums/icon.enum';
+import { INavLink, ISettings } from '../../interfaces/navbar.interface';
+import { links, settings } from './navbar.data';
 
 @Component({
   selector: 'app-navbar',
@@ -9,15 +9,12 @@ import { Icons } from '../../enums/icon.enum';
 })
 export class NavbarComponent implements OnInit {
 
-  links: INavLink[] = [
-    { name: 'Home', iconName: Icons.Home, path: '' },
-    { name: 'Elements', iconName: Icons.ListAlt, path: 'elements' },
-    { name: 'About us', iconName: Icons.People, path: 'about-us' }
-  ];
+  public menuLinks: INavLink[] = links;
+  public menuSettings: ISettings[] = settings;
 
   constructor() { }
 
   ngOnInit(): void {
-  }
 
+  }
 }
