@@ -5,5 +5,10 @@ export enum ElementColumns {
   AtomicMass = 'atomic mass',
   State = 'state',
   ChemicalNature = 'chemical nature',
-  Options = 'options'
+  Density = 'density',
+  MeltingTemp = 'melting temperature',
+  BoilingTemp = 'boiling temperature',
+  DiscoveryYear = 'discovery year',
+  Discoverer = 'discoverer',
+  Details = 'details',
 }

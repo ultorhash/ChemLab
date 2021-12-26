@@ -7,7 +7,7 @@
   align-items: center;
   flex-wrap: nowrap;
   border-bottom: 2px solid $gray300;
-  background-color: $green200;
+  background-color: $blue300;
 }
 
 .navbar-link {
@@ -17,7 +17,7 @@
   transition: 0.2s;
 
   &:hover {
-    background-color: $green600;
+    background-color: $blue600;
     color: $white;
   }
 }

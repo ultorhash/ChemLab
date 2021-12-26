@@ -16,6 +16,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ColumnFormatPipe } from './pipes/column-name.pipe';
+import { ElementModalComponent } from './components/element-modal/element-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { ColumnFormatPipe } from './pipes/column-name.pipe';
     ElementsComponent,
     NavbarComponent,
     FooterComponent,
-    ColumnFormatPipe
+    ColumnFormatPipe,
+    ElementModalComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { ColumnFormatPipe } from './pipes/column-name.pipe';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,3 +1,4 @@
+import { IDescription } from './description.interface';
 export interface IElement {
   name: string;
   symbol: string;
@@ -10,4 +11,9 @@ export interface IElement {
   boilingTemp: number;
   discoveryYear: number;
   discoverer: string;
+}
+
+export interface IElementData {
+  property: string | number;
+  description: IDescription;
 }

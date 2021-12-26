@@ -51,15 +51,13 @@
         <mat-cell *matCellDef="let element"> {{ element.state }} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="chemical nature">
+      <ng-container matColumnDef="details">
         <mat-header-cell *matHeaderCellDef> {{ displayedColumns[5] | columnFormat }} </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{ element.chemicalNature }} </mat-cell>
-      </ng-container>
-
-      <ng-container matColumnDef="options">
-        <mat-header-cell *matHeaderCellDef> {{ displayedColumns[6] | columnFormat }} </mat-header-cell>
         <mat-cell *matCellDef="let element">
-          <button mat-icon-button>
+          <button
+            mat-icon-button
+            (click)="openModal(element)"
+          >
             <mat-icon>{{ settingsIcon }}</mat-icon>
           </button>
         </mat-cell>
