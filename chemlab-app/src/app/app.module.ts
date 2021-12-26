@@ -15,6 +15,9 @@ import { MatInputModule } from '@angular/material/input'
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ColumnFormatPipe } from './pipes/column-name.pipe';
+import { ElementModalComponent } from './components/element-modal/element-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     ElementsComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ColumnFormatPipe,
+    ElementModalComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],

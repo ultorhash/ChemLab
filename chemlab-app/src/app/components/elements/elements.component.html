@@ -27,23 +27,40 @@
       class="elements-table"
     >
       <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> {{ displayedColumns[0] | columnFormat }} </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="symbol">
-        <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> {{ displayedColumns[1] | columnFormat }} </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{ element.symbol }} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="atomic number">
-        <mat-header-cell *matHeaderCellDef> Atomic number </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> {{ displayedColumns[2] | columnFormat }} </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{ element.atomicNumber }} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="atomic mass">
-        <mat-header-cell *matHeaderCellDef> Atomic mass </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef> {{ displayedColumns[3] | columnFormat }} </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{ element.atomicMass }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="state">
+        <mat-header-cell *matHeaderCellDef> {{ displayedColumns[4] | columnFormat }} </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.state }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="details">
+        <mat-header-cell *matHeaderCellDef> {{ displayedColumns[5] | columnFormat }} </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button
+            mat-icon-button
+            (click)="openModal(element)"
+          >
+            <mat-icon>{{ settingsIcon }}</mat-icon>
+          </button>
+        </mat-cell>
       </ng-container>
 
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

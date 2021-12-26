@@ -1,0 +1,16 @@
+<div class="modal-description">
+  <p>Details for {{ elementName }}</p>
+</div>
+<div class="modal-element">
+  <div class="element-data" *ngFor="let item of elementData">
+    <div class="column">
+      <mat-icon>
+        {{ item.description.icon }}
+      </mat-icon>
+      <span>{{ item.description.text | columnFormat }}</span>
+    </div>
+    <div class="column">
+      <b>{{ item.property }}</b>
+    </div>
+  </div>
+</div>
