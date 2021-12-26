@@ -65,6 +65,11 @@ export class ElementsComponent implements OnInit {
     this.dataSource.filter = filterValue;
   }
 
+  clearFilter(): void {
+    this.dataSource.filter = '';
+    this.search.value = '';
+  }
+
   openModal(element: IElement): void {
     const dialogRef = this.dialog.open(ElementModalComponent, {
       data: element
