@@ -19,6 +19,10 @@ import { ColumnFormatPipe } from './pipes/column-name.pipe';
 import { ElementModalComponent } from './components/element-modal/element-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
+import { NgxsModule } from '@ngxs/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { ElementsState } from './store/state/elements.state';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,12 @@ import { MatMenuModule } from '@angular/material/menu';
     ReactiveFormsModule,
     HttpClientModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    NgxsModule.forRoot([
+      ElementsState
+    ]),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsLoggerPluginModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],
