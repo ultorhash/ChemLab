@@ -23,6 +23,8 @@ import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { ElementsState } from './store/state/elements.state';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { ElementsState } from './store/state/elements.state';
     NavbarComponent,
     FooterComponent,
     ColumnFormatPipe,
-    ElementModalComponent
+    ElementModalComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,7 @@ import { ElementsState } from './store/state/elements.state';
     HttpClientModule,
     MatDialogModule,
     MatMenuModule,
+    MatProgressSpinnerModule,
     NgxsModule.forRoot([
       ElementsState
     ]),

@@ -25,7 +25,7 @@ export class ElementsComponent implements OnInit, OnDestroy {
   private _elementsSubscription: Subscription = new Subscription();
   private _storeSubscription: Subscription = new Subscription();
   private _elements$: Observable<IElement[]>;
-
+  
   dataSource = new MatTableDataSource<IElement>();
   displayedColumns = [
     ElementColumns.Name,
@@ -40,7 +40,8 @@ export class ElementsComponent implements OnInit, OnDestroy {
     value: ''
   };
   
-  settingsIcon = Icons.Menu;
+  dataReady: boolean = false;
+  settingsIcon: Icons = Icons.Menu;
 
   constructor(
     private elementsService: ElementsService,
@@ -62,11 +63,13 @@ export class ElementsComponent implements OnInit, OnDestroy {
     this._elementsSubscription = this._elements$.subscribe(elements => {
       if (elements.length !== 0) {
         this.dataSource.data = elements;
+        this.dataReady = true;
       } else {
         this._storeSubscription = this.elementsService.getElements().pipe(
           tap(res => {
             this.dataSource.data = res;
             this.store.dispatch(new SetElements(res))
+            this.dataReady = true;
           }),
           retry(3)
         )
